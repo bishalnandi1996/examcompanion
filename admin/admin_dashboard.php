@@ -12,7 +12,7 @@
 				$num=mysqli_num_rows($result);
 				echo "<h1><i class='fas fa-clipboard-list'></i> ".$num."</h1>";
 			?>
-			<sub>UPLOADED QUESTION SET</sub>
+			<sub>AVAILABLE QUESTION SETS</sub>
 		</div>
 	</div>
 
