@@ -26,7 +26,7 @@
 
 <div class="row" style="margin-top: 5px; margin-right: 5px;">
     <div class="col-sm-12 d-flex justify-content-end">
-        <button class="btn btn-primary" data-toggle='modal' data-target='#myModal'><i class="fas fa-plus-circle"></i> New Department</button>
+        <button class="btn btn-primary" data-toggle='modal' data-target='#myModal'><i class="fas fa-plus-circle"></i> New Stream</button>
     </div>
 </div>
 
