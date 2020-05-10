@@ -1,3 +1,4 @@
+--
 -- Database: `examcompanion`
 --
 
@@ -39,8 +40,7 @@ CREATE TABLE `question` (
 --
 
 INSERT INTO `question` (`qstn_id`, `qstn_name`, `qstn_key`, `qstn_vector`, `strm_id`, `time`) VALUES
-(8, 'infosys', '8a2919717fce42f1', 'acc307db125773e1', 1, 120),
-(17, 'wipro', '64152e85a13582c7', 'ec487df5d2eb3de6', 1, 120);
+(8, 'infosys', '8a2919717fce42f1', 'acc307db125773e1', 1, 120);
 
 -- --------------------------------------------------------
 
@@ -60,8 +60,7 @@ CREATE TABLE `question_assign` (
 
 INSERT INTO `question_assign` (`qstn_asgn_id`, `qstn_id`, `st_passout_year`) VALUES
 (7, 8, 2020),
-(8, 8, 2021),
-(11, 17, 2020);
+(8, 8, 2021);
 
 -- --------------------------------------------------------
 
@@ -165,13 +164,12 @@ INSERT INTO `result` (`res_id`, `st_id`, `qstn_id`, `res_result`, `attempt_count
 (5, 1, 8, 0, 5, '2019-11-06', '6e172d29fd872589', 'd54e8293b82f3fb2'),
 (6, 1, 8, 0, 6, '2019-11-06', '90eee6fdbae3c47a', '10e77f3171989f7b'),
 (7, 13, 8, 8, 1, '2019-11-11', 'a84680a85ecf73d9', '377e048e80f1ab8b'),
-(8, 1, 17, 4, 1, '2019-11-11', 'bc48db224af93aa4', 'b3b9cba7cff4b51e'),
-(9, 1, 17, 0, 2, '2019-11-16', 'fa242a2070ff8cd9', '88ce80585ed2d001'),
 (10, 1, 8, 4, 7, '2019-11-16', 'c7b6067b14bbfed4', 'fb00f0763d4af26e'),
 (11, 1, 8, 0, 8, '2019-11-29', '7785f7880add6b8b', 'ec522112c76caef5'),
-(12, 1, 17, 4, 3, '2019-11-29', '9229627c3e589f15', '00428de007e78bb8'),
 (13, 1, 8, 0, 9, '2020-02-16', 'd68e12bddd8aabd5', '74f4458cf7d5a6e1'),
-(14, 1, 8, 0, 10, '2020-02-16', '051c9d0463f195e2', '8474c57ea2aee1a8');
+(14, 1, 8, 0, 10, '2020-02-16', '051c9d0463f195e2', '8474c57ea2aee1a8'),
+(16, 1, 8, 0, 11, '2020-03-28', '24489cd6dc727b78', 'cf329e5f7752da9e'),
+(17, 1, 8, 0, 12, '2020-05-04', 'b80926d95ff98904', 'f74311c7e96fdcea');
 
 -- --------------------------------------------------------
 
@@ -183,13 +181,6 @@ CREATE TABLE `session` (
   `user_id` varchar(200) NOT NULL,
   `session_id` varchar(255) NOT NULL
 );
-
---
--- Dumping data for table `session`
---
-
-INSERT INTO `session` (`user_id`, `session_id`) VALUES
-('tchr_1', '2ab4226da338c1d8ce4383949fbefd9f');
 
 -- --------------------------------------------------------
 
@@ -207,10 +198,10 @@ CREATE TABLE `stream` (
 --
 
 INSERT INTO `stream` (`strm_id`, `strm_name`) VALUES
-(1, 'MCA'),
-(2, 'B.Tech CSE'),
-(3, 'B.Tech IT'),
-(4, 'BCA');
+(1, 'Master of Computer Application'),
+(2, 'B.Tech Computer Science & Engineering'),
+(3, 'B.Tech Information Technology'),
+(4, 'Bachelor of Computer Application');
 
 -- --------------------------------------------------------
 
@@ -232,7 +223,15 @@ INSERT INTO `stream_subjects` (`strm_subj_id`, `strm_id`, `subj_id`) VALUES
 (1, 1, 1),
 (2, 4, 3),
 (3, 1, 2),
-(4, 4, 2);
+(4, 4, 2),
+(5, 1, 4),
+(6, 1, 6),
+(7, 1, 7),
+(8, 4, 9),
+(9, 4, 10),
+(10, 4, 9),
+(11, 1, 8),
+(13, 3, 7);
 
 -- --------------------------------------------------------
 
@@ -246,6 +245,7 @@ CREATE TABLE `student` (
   `st_univ_roll` bigint(20) NOT NULL,
   `strm_id` bigint(20) DEFAULT NULL,
   `st_passout_year` int(4) DEFAULT NULL,
+  `st_mobile` bigint(20) NOT NULL,
   `st_email` varchar(200) DEFAULT NULL,
   `st_password` varchar(255) DEFAULT NULL,
   `st_signup` int(1) NOT NULL DEFAULT 0
@@ -255,12 +255,10 @@ CREATE TABLE `student` (
 -- Dumping data for table `student`
 --
 
-INSERT INTO `student` (`st_id`, `st_name`, `st_univ_roll`, `strm_id`, `st_passout_year`, `st_email`, `st_password`, `st_signup`) VALUES
-(1, 'Bishal Nandi', 33601018021, 1, 2020, 'bishalnandi1996@gmail.com', '$2y$10$pMN7vJDMMtkuKoZjFRNmFOLvXtRtz8KAFnPq2vGl2KnJkT3ubE/0S', 1),
-(13, 'a', 11101, 1, 2020, 'a@gmail.com', '$2y$10$cRHOAwTxbLZq/ewskskACu2MRvBpex8tLrOhzm.uxbI4iD8J1zIae', 1),
-(14, 'b', 2222, NULL, NULL, NULL, NULL, 0),
-(15, 'abishal', 45343545356675, NULL, 2021, NULL, NULL, 0),
-(16, 'aaabishal ssdfsfs', 6756756, NULL, 2020, NULL, NULL, 0);
+INSERT INTO `student` (`st_id`, `st_name`, `st_univ_roll`, `strm_id`, `st_passout_year`, `st_mobile`, `st_email`, `st_password`, `st_signup`) VALUES
+(1, 'Bishal Nandi', 33601018021, 1, 2020, 0, 'bishalnandi1996@gmail.com', '$2y$10$pMN7vJDMMtkuKoZjFRNmFOLvXtRtz8KAFnPq2vGl2KnJkT3ubE/0S', 1),
+(13, 'a', 11101, 1, 2020, 0, 'a@gmail.com', '$2y$10$cRHOAwTxbLZq/ewskskACu2MRvBpex8tLrOhzm.uxbI4iD8J1zIae', 1),
+(14, 'b', 2222, 4, 2020, 9832098320, 'b@gmail.com', '$2y$10$miZyUKEXAHvXT92rB.wxRu9j6NXYPvwvGvtzfT30ln7kn/EwzfFkK', 1);
 
 -- --------------------------------------------------------
 
@@ -280,7 +278,14 @@ CREATE TABLE `subject` (
 INSERT INTO `subject` (`subj_id`, `subj_name`) VALUES
 (1, 'Data Structure with C'),
 (2, 'Software Engineering'),
-(3, 'OOP with C++');
+(3, 'OOP with C++'),
+(4, 'OOP with Java'),
+(5, 'Unix and Shell Programming'),
+(6, 'Graphics and Multimedia'),
+(7, 'E-Commerce'),
+(8, 'Database Management System'),
+(9, 'Windows Programming with VB'),
+(10, 'Business Management');
 
 -- --------------------------------------------------------
 
@@ -293,6 +298,7 @@ CREATE TABLE `teacher` (
   `tchr_name` varchar(100) NOT NULL,
   `strm_id` bigint(20) DEFAULT NULL,
   `tchr_employee_id` varchar(10) NOT NULL,
+  `tchr_mobile` bigint(20) NOT NULL,
   `tchr_email` varchar(200) DEFAULT NULL,
   `tchr_password` varchar(255) DEFAULT NULL,
   `tchr_signup` int(1) DEFAULT 0
@@ -302,10 +308,10 @@ CREATE TABLE `teacher` (
 -- Dumping data for table `teacher`
 --
 
-INSERT INTO `teacher` (`tchr_id`, `tchr_name`, `strm_id`, `tchr_employee_id`, `tchr_email`, `tchr_password`, `tchr_signup`) VALUES
-(1, 'Bishal Nandi', 1, '1996', 'bishalnandi1996@gmail.com', '$2y$10$fgWlXjv.mFUx4Rbeq4ufP.k37c0.cAtV06yPtKnfYiPgWh810RyHO', 1),
-(68, 'a', 1, '1111', 'a@gmail.com', '$2y$10$43ZNO./fSku.nq5ZucZRc.UuPcaXFruIrcK6XLNGPru.LYyhYNWjq', 1),
-(69, 'b', 4, '2222', NULL, NULL, 0);
+INSERT INTO `teacher` (`tchr_id`, `tchr_name`, `strm_id`, `tchr_employee_id`, `tchr_mobile`, `tchr_email`, `tchr_password`, `tchr_signup`) VALUES
+(1, 'Bishal Nandi', 1, '1996', 0, 'bishalnandi1996@gmail.com', '$2y$10$fgWlXjv.mFUx4Rbeq4ufP.k37c0.cAtV06yPtKnfYiPgWh810RyHO', 1),
+(68, 'a', 1, '1111', 0, 'a@gmail.com', '$2y$10$43ZNO./fSku.nq5ZucZRc.UuPcaXFruIrcK6XLNGPru.LYyhYNWjq', 1),
+(69, 'b', 4, '2222', 0, NULL, NULL, 0);
 
 --
 -- Indexes for dumped tables
@@ -394,13 +400,13 @@ ALTER TABLE `teacher`
 -- AUTO_INCREMENT for table `question`
 --
 ALTER TABLE `question`
-  MODIFY `qstn_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `qstn_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `question_assign`
 --
 ALTER TABLE `question_assign`
-  MODIFY `qstn_asgn_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `qstn_asgn_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `question_subjectwise`
@@ -412,19 +418,19 @@ ALTER TABLE `question_subjectwise`
 -- AUTO_INCREMENT for table `result`
 --
 ALTER TABLE `result`
-  MODIFY `res_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `res_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `stream`
 --
 ALTER TABLE `stream`
-  MODIFY `strm_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `strm_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `stream_subjects`
 --
 ALTER TABLE `stream_subjects`
-  MODIFY `strm_subj_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `strm_subj_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `student`
@@ -436,7 +442,7 @@ ALTER TABLE `student`
 -- AUTO_INCREMENT for table `subject`
 --
 ALTER TABLE `subject`
-  MODIFY `subj_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `subj_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `teacher`

@@ -12,6 +12,7 @@
 	<title></title>
 	<!--Bootstrap 4-->
 	<link rel="stylesheet" type="text/css" href="../bootstrap-4/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="../fontawesome-5/css/all.css" />
 	<script src="../jquery-3.2.1.min.js"></script>
 	<script src="../bootstrap-4/js/bootstrap.min.js"></script>
 </head>
@@ -25,7 +26,14 @@
 	$result=mysqli_query($link,$sql);
 	$row=mysqli_fetch_assoc($result);
 
-	echo "<div class='row d-flex justify-content-center'><h2 style='border: 4px double #ffffff; color: #ffffff; padding: 10px; margin-top: 10px; background: #000000;'>".strtoupper($row['qstn_name'])."</h2></div>";
+	echo "<div class='row' style='margin-top: 10px;'>";
+	echo "<div class='col-sm-10'>
+			<h2 style='font-weight: bold;'>".strtoupper($row['qstn_name'])."</h2>
+		</div>";
+	echo "<div class='col-sm-1'><button type='button' class='btn btn-dark' onclick='alert(\"Under Construction\")'><i class='fas fa-file-download'></i> Download</button></div>";
+	echo "</div>";
+
+	echo "<hr/>";
 
 
 	#start of file reading

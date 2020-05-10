@@ -153,6 +153,15 @@
 					</div>
 				</div>
 				<div class="form-group row">
+					<label class="col-form-label col-sm-4">PHONE NO </label>
+					<div class="input-group col-sm-7">
+						<div class="input-group-prepend">
+							<div class="input-group-text"><i class="fas fa-mobile-alt"></i></div>
+						</div>
+						<input type="text" class="form-control" pattern="[0-9]{10}" name="frmSignupPh" placeholder="mobile number" required />
+					</div>
+				</div>
+				<div class="form-group row">
 					<label class="col-form-label col-sm-4">EMAIL </label>
 					<div class="input-group col-sm-7">
 						<div class="input-group-prepend">
@@ -278,6 +287,15 @@
 					</div>
 					<div class="col-sm-11 text-danger d-flex justify-content-end" style="font-weight: bold;">	
 						<div id="tchrSignupMessage"></div>
+					</div>
+				</div>
+				<div class="form-group row">
+					<label class="col-form-label col-sm-4">PHONE NO </label>
+					<div class="input-group col-sm-7">
+						<div class="input-group-prepend">
+							<div class="input-group-text"><i class="fas fa-mobile-alt"></i></div>
+						</div>
+						<input type="text" class="form-control" pattern="[0-9]{10}" name="frmSignupPh" placeholder="mobile number" required />
 					</div>
 				</div>
 				<div class="form-group row">
