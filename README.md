@@ -7,7 +7,7 @@ MCQ based digital examination system
 - Apache Server
 - PHP 7+
 - MySQL 5+
-- MySQL gui client for easy access eg: phpmyadmin (optio
+- MySQL gui client for easy access eg: phpmyadmin
 - Any text editor for customization
 
 
