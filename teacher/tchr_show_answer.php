@@ -15,6 +15,16 @@
 	<link rel="stylesheet" type="text/css" href="../fontawesome-5/css/all.css" />
 	<script src="../jquery-3.2.1.min.js"></script>
 	<script src="../bootstrap-4/js/bootstrap.min.js"></script>
+
+	<script>
+	var u = <?php echo json_encode($_GET['user']); ?>;
+	var k = <?php echo json_encode($_GET['key']); ?>;
+
+	function downloadQstn(x) {
+		window.open('tchr_download_qstn.php?user='+u+'&key='+k+'&qstn='+x);
+	}
+	</script>
+
 </head>
 <body style="overflow-x: hidden;">
 <div class="container">
@@ -30,7 +40,7 @@
 	echo "<div class='col-sm-10'>
 			<h2 style='font-weight: bold;'>".strtoupper($row['qstn_name'])."</h2>
 		</div>";
-	echo "<div class='col-sm-1'><button type='button' class='btn btn-dark' onclick='alert(\"Under Construction\")'><i class='fas fa-file-download'></i> Download</button></div>";
+	echo "<div class='col-sm-1'><button type='button' class='btn btn-dark' onclick='downloadQstn(".$row['qstn_id'].")'><i class='fas fa-file-download'></i> Download</button></div>";
 	echo "</div>";
 
 	echo "<hr/>";
@@ -49,7 +59,7 @@
 
 	$i=0;
 	foreach($file_content_json as $qstn_set) {
-		$j=0;
+		//$j=0;
 		echo '<div class="row" style="margin-bottom: 20px;">
 				<div class="col-sm-12" style="border: 2px solid #000000;"> <b>'.++$i.'.</b> '.$qstn_set['question'].'</div>
 				<div class="col-sm-6"><b>Answer:</b> '.$qstn_set[$qstn_set['answer']].'</div>

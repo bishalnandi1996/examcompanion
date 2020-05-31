@@ -17,6 +17,10 @@
 	function loadAnswer(x) {
 		window.open('tchr_show_answer.php?user='+u+'&key='+k+'&qstn='+x);
 	}
+
+	function downloadQstn(x) {
+		window.open('tchr_download_qstn.php?user='+u+'&key='+k+'&qstn='+x);
+	}
 	
 	function setValField(x) {
 		document.getElementById('qstn_id_forpassing').value=x;
@@ -53,7 +57,7 @@
 			echo "<div class='col-sm-5'>";
 				echo "<button type='button' class='btn btn-primary' onclick='loadAnswer(".$row['qstn_id'].")' ><i class='fas fa-eye'></i> Show Answer</button>";
 				echo "<button type='button' class='btn btn-success' onclick='setValField(".$row['qstn_id'].")' data-toggle='modal' data-target='#myModal'><i class='fas fa-paper-plane'></i> Assign</button>";
-				echo "<button type='button' class='btn btn-dark' onclick='alert(\"Under Construction\")'><i class='fas fa-file-download'></i> Download</button>";
+				echo "<button type='button' class='btn btn-dark' onclick='downloadQstn(".$row['qstn_id'].")'><i class='fas fa-file-download'></i> Download</button>";
 				echo "<button type='button' class='btn btn-danger' onclick='deleteQstn(".$row['qstn_id'].")'><i class='fas fa-trash-alt'></i> Delete</button>";
 			echo "</div>";
 		echo "</div>";
