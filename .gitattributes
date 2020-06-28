@@ -1,3 +1,4 @@
 *.css linguist-detectable=false
+*style* linguist-detectable=false
 *.js linguist-detectable=false
 *.php linguist-detectable=true
