@@ -1,6 +1,6 @@
 *.js linguist-language=PHP
 *.css linguist-language=PHP
 *.min.css linguist-language=PHP
-*min.css.map linguist-detectable=false
+*.min.css.map linguist-detectable=false
 *.htm linguist-language=PHP
 *.html linguist-language=PHP
