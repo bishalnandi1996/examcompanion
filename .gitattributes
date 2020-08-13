@@ -1,2 +1,5 @@
 *.js linguist-language=PHP
 *.css linguist-language=PHP
+*.min.css linguist-language=PHP
+*.htm linguist-language=PHP
+*.html linguist-language=PHP
