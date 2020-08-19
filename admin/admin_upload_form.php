@@ -26,6 +26,13 @@
 	<div class="col-sm-6"><!--File uploading form-->
 		
 		<fieldset><div class="row"><!--Teacher Data Upload-->
+
+		<?php
+			if(isset($_GET['type']) && strcmp($_GET['type'],'tchr')==0) {
+				echo "<div class='row' style='margin-top: 20px; color: #ffffff;'><div class='col-sm-12 d-flex justify-content-center'><h6 class='bg-success' style='padding: 4px;'>Teacher Data Upload was Successfull</h6></div></div>";
+			}
+		?>
+
 			<div class="d-sm-flex justify-content-center" style="margin-top: 20px;"><!--flex to center align the form-->
 				<div class="card col-sm-12" style="padding: 0;"><!--bootstrap4 card-->
 					<div class="card-heading bg-info text-white text-center col-sm-12" style="padding: 5px; font-weight: bold;"><i class="fas fa-chalkboard-teacher"></i> UPLOAD TEACHER DATA</div>
@@ -53,6 +60,13 @@
 	
 		
 		<fieldset><div class="row"><!--Student Data Upload-->
+
+		<?php
+			if(isset($_GET['type']) && strcmp($_GET['type'],'std')==0) {
+				echo "<div class='row' style='margin-top: 20px; color: #ffffff;'><div class='col-sm-12 d-flex justify-content-center'><h6 class='bg-success' style='padding: 4px;'>Student Data Upload was Successfull</h4></div></div>";
+			}
+		?>
+
 			<div class="d-sm-flex justify-content-center" style="margin-top: 20px;"><!--flex to center align the form-->
 				<div class="card col-sm-12" style="padding: 0;"><!--bootstrap4 card-->
 					<div class="card-heading bg-info text-white text-center col-sm-12" style="padding: 5px; font-weight: bold;"><i class="fas fa-user-graduate"></i> UPLOAD STUDENT DATA</div>
