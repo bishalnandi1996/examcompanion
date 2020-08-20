@@ -475,8 +475,8 @@
 		<div class="col-sm-7" style="margin: 10px;">
 			&copy; <?php echo date("Y"); ?> Siliguri Institute of Technology. All Rights Reserved
 		</div>
-		<div class="col-sm-4" style="margin: 10px; cursor: pointer;" onclick="window.open('https://www.instagram.com/bishalnandi1996')">
-			Developed and Maintained by <i class="fab fa-instagram"></i> <b>BISHAL</b>
+		<div class="col-sm-4" style="margin: 10px; cursor: pointer;" onclick="window.open('https://www.linkedin.com/in/bishalnandi1996/')">
+			Developed and Maintained by <i class="fab fa-linkedin"></i> <b>BISHAL</b>
 		</div>
 	</div>
 </footer>

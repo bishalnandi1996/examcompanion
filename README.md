@@ -9,6 +9,7 @@ MCQ based digital examination system
 - MySQL 5+
 - MySQL gui client for easy access eg: phpmyadmin
 - Any text editor for customization
+- Firefox 69+
 
 
 #### Database Setup
@@ -29,4 +30,4 @@ For the first time access the application url eg:
 - password `bishal`
 
 **For any techncal issue contact**
-[BISHAL](https://www.instagram.com/bishalnandi1996/)
+[BISHAL](https://www.linkedin.com/in/bishalnandi1996/)
