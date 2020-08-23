@@ -11,7 +11,7 @@
 <div class="row">
 
 
-	<div class="col-sm-5" style="background: #00eed4; border: 3px solid #0a9b69; border-radius: 10px; color: #0a9b69; margin: 20px; font-weight: bold;"><!--start of file format instruction-->
+	<div class="col-sm-5" style="background: #dedede; border: 3px solid #00003b; color: #00006f; margin: 20px; font-weight: bold;"><!--start of file format instruction-->
 		<div class="row d-flex justify-content-center">
 			<h3 style="text-decoration: underline;">INSTRUCTIONS FOR FILE UPLOAD</h3>
 		</div>
@@ -28,6 +28,7 @@
 				<li>6th column is for option D</li>
 				<li>7th column is for correct option i.e. A or B or C or D</li>
 				<li>First row should contain the corresponding headings only</li>
+				<li>Question name should be given in this format: {dept name} / {semester} / {question type}</li>
 			</ol>
 		</div>
 	</div><!--end of file format instruction-->

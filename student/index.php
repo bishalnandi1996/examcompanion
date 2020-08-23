@@ -12,7 +12,7 @@
 ?>
 
 <div class="row">
-	<div class="col-sm-5" style="background: #00eed4; border: 3px solid #0a9b69; border-radius: 10px; color: #0a9b69; margin: 20px; font-weight: bold;" ><!--instructions-->
+	<div class="col-sm-5" style="background: #dedede; border: 3px solid #00003b; color: #00006f; margin: 20px; font-weight: bold;" ><!--instructions-->
 		<div class="row d-flex justify-content-center">
 			<h3 style="text-decoration: underline;">INSTRUCTIONS</h3>
 		</div>
@@ -42,8 +42,8 @@
 			else {
 				while ($row=mysqli_fetch_assoc($result)) {
 					echo "<div class='row' style='margin: 5px;'>";
-					echo "<div class='col-sm-9' style='background: #866db3; padding-top: 5px; color: #ffffff; font-size: 20px;'><i class='fas fa-clipboard-list'></i> ".$row['qstn_name']."</div>";
-					echo "<div class='col-sm-3' style='padding: 2px;'><button type='button' class='btn btn-success' onclick='startTest(".$row['qstn_id'].")' >Start Test</button></div>";
+					echo "<div class='col-sm-9' style='background: #8362be; padding-top: 5px; color: #ffffff; font-size: 20px;'><i class='fas fa-clipboard-list'></i> ".$row['qstn_name']."</div>";
+					echo "<div class='col-sm-3' style='padding: 2px;'><button type='button' style='border-radius: 0px;' class='btn btn-success' onclick='startTest(".$row['qstn_id'].")' ><i class='fas fa-play-circle'></i> Start Test</button></div>";
 					echo "</div>";
 				}
 			}

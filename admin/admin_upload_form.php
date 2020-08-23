@@ -7,7 +7,7 @@
 
 <div class="row">
 
-	<div class="col-sm-5" style="background: #00eed4; border: 3px solid #0a9b69; border-radius: 10px; color: #0a9b69; margin: 20px; font-weight: bold;"><!--Instruction for file format-->
+	<div class="col-sm-5" style="background: #dedede; border: 3px solid #00003b; color: #00006f; margin: 20px; font-weight: bold;"><!--Instruction for file format-->
 		<div class="row d-flex justify-content-center">
 			<h3 style="text-decoration: underline;">INSTRUCTIONS FOR FILE UPLOAD</h3>
 		</div>

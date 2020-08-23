@@ -32,7 +32,7 @@ if(isset($_FILES['frmDataFile'])) {
 	move_uploaded_file($_FILES['frmDataFile']['tmp_name'], $uploadfile);
 	
 	echo "<form id='frmJson' action='admin_upload_save.php?user=".$_GET['user']."&key=".$_GET['key']."&type=".$_GET['type']."' method='post'>";
-	echo "<input type='text' name='frmFileUploadData' id='frmFileUploadData' style='display: none;'/>";
+	echo "<input type='text' name='frmFileUploadData' id='frmFileUploadData' style='display: none;' />";#style='display: none;'
 	echo "</form>";
 }
 
