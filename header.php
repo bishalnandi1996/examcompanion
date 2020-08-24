@@ -73,7 +73,7 @@
 
 <div class="container">
 
-	<div class="row" style="margin-top: 50px; margin-left: 50px; margin-right: 50px; border: 5px double #000000;"><!--heading-->
+	<div class="row" style="margin-top: 20px; margin-left: 50px; margin-right: 50px; border: 5px double #000000;"><!--heading-->
 		<div class="col-sm-12 d-flex justify-content-center text-center"><h2 style="font-weight: bold; color: #000c72;">EXAM COMPANION</h2></div>
 		<div class="col-sm-12 d-flex justify-content-center text-center"><h5 style="font-weight: bold; color: #000c72;">Digitalized Examination System</h5></div>
 	</div><!--end heading-->
