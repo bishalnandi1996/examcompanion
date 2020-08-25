@@ -20,6 +20,18 @@
         var deptID = document.getElementById('frmStrmID').value;
 
 		window.location='admin_subj_dept.php?user='+u+'&key='+k+'&subjID='+subjID+'&deptID='+deptID;
+    }
+    
+    function loadDeptModal(subjID) {
+		var xhttpSubjModal = new XMLHttpRequest();
+		xhttpSubjModal.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+				$("#deptModal .modal-body").html(this.responseText);
+				$("#deptModal").modal();
+			}
+		};
+		xhttpSubjModal.open("GET", "admin_load_dept_modal.php?user=" + u + "&key=" + k + "&subj=" + subjID, true);
+		xhttpSubjModal.send();	
 	}
 </script>
 
@@ -54,7 +66,7 @@
         $sql="select * from subject";
         $result=mysqli_query($link,$sql);
         while($row=mysqli_fetch_assoc($result)) {
-            echo "<div style='color: #1c5b00; border: 2px solid #1c5b00; margin-left: 10px; margin-top: 10px; padding: 5px; background: #9bf873; font-weight: bold;'><h1 style='color: #ffffff;'><i class='fas fa-book'></i></h1>".$row['subj_name']."</div>";
+            echo "<div onclick='loadDeptModal(".$row['subj_id'].");' style='color: #1c5b00; border: 2px solid #1c5b00; margin-left: 10px; margin-top: 10px; padding: 5px; background: #9bf873; font-weight: bold;'><h1 style='color: #ffffff;'><i class='fas fa-book'></i></h1>".$row['subj_name']."</div>";
         }
     ?>
 </div>
@@ -134,6 +146,26 @@
 		<div class="modal-footer">
 			<button type="button" class="btn btn-success" onclick='assignSubjDept()'><i class="fas fa-share-square"></i> Assign</button>
 			<button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-power-off"></i> Close</button>
+		</div>
+
+	</div>
+</div>
+</div>
+
+
+<!-- Departments Modal -->
+<!-- Dynamic Content -->
+<div class="modal" id="deptModal">
+<div class="modal-dialog">
+	<div class="modal-content">
+
+		<!-- Modal Header -->
+		<div class="modal-header">
+			<h4 class="modal-title">DEPARTMENTS</h4>
+			<button type="button" class="close" data-dismiss="modal">&times;</button>
+		</div>
+		<!-- Modal body -->
+		<div class="modal-body">
 		</div>
 
 	</div>

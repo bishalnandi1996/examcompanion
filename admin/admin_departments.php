@@ -102,7 +102,6 @@
 </div>
 
 
-
 <?php
 	require 'admin_footer.php';
 ?>
