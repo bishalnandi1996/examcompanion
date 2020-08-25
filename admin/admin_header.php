@@ -11,6 +11,9 @@
 	<script src="../jquery-3.2.1.min.js"></script>
 	<script src="../bootstrap-4/js/bootstrap.min.js"></script>
 
+	<!--Custom CSS-->
+	<link rel="stylesheet" type="text/css" href="style.css" />
+
 	<style>
 		.container-fluid {
 			margin-left: auto;
