@@ -32,9 +32,10 @@ $worksheet = $spreadsheet->getActiveSheet();
 $worksheet_data=$worksheet->toArray();
 
 
+$user=explode("_",$_GET['user']);
 $question="";
 for($i=1;$i<count($worksheet_data);$i++) {
-    $question.="insert into question_subjectwise(qstn,option_a,option_b,option_c,option_d,answer,subj_id) values('".mysqli_real_escape_string($link,$worksheet_data[$i][1])."','".mysqli_real_escape_string($link,$worksheet_data[$i][2])."','".mysqli_real_escape_string($link,$worksheet_data[$i][3])."','".mysqli_real_escape_string($link,$worksheet_data[$i][4])."','".mysqli_real_escape_string($link,$worksheet_data[$i][5])."','".mysqli_real_escape_string($link,strtolower($worksheet_data[$i][6]))."',".$_GET['subject'].");";
+    $question.="insert into question_subjectwise(qstn,option_a,option_b,option_c,option_d,answer,subj_id,tchr_id) values('".mysqli_real_escape_string($link,$worksheet_data[$i][1])."','".mysqli_real_escape_string($link,$worksheet_data[$i][2])."','".mysqli_real_escape_string($link,$worksheet_data[$i][3])."','".mysqli_real_escape_string($link,$worksheet_data[$i][4])."','".mysqli_real_escape_string($link,$worksheet_data[$i][5])."','".mysqli_real_escape_string($link,strtolower($worksheet_data[$i][6]))."',".$_GET['subject'].",".$user[1].");";
 }
 
 unlink($inputFileName);

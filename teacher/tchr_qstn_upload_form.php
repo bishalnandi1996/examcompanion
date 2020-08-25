@@ -28,7 +28,6 @@
 				<li>6th column is for option D</li>
 				<li>7th column is for correct option i.e. A or B or C or D</li>
 				<li>First row should contain the corresponding headings only</li>
-				<li>Question name should be given in this format: {dept name} / {semester} / {question type}</li>
 			</ol>
 		</div>
 	</div><!--end of file format instruction-->

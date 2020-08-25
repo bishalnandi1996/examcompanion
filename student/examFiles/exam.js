@@ -34,9 +34,15 @@ function submitAnswer() {
 	document.getElementById("examFrm").submit();
 }
 
-function frmReset() {
-	document.getElementById("examFrm").reset();
+function frmQstnReset(x) {
+	var qstn = document.getElementsByName("examOption[" + x + "][0]");
+	qstn[0].checked = false;
+	qstn[1].checked = false;
+	qstn[2].checked = false;
+	qstn[3].checked = false;
 }
+
+
 
 $('document').ready(function(){
 	window.onblur = function() {
