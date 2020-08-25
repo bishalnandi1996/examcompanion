@@ -16,18 +16,6 @@
 		</div>
 	</div>
 
-	<div class="card bg-warning text-white col-sm-2"><!--department-->
-		<div class="card-body text-center">
-			<?php
-				$sql="select * from stream";
-				$result=mysqli_query($link,$sql);
-				$num=mysqli_num_rows($result);
-				echo "<h1><i class='fas fa-university'></i> ".$num."</h1>";
-			?>
-			<sub>REGISTERTED DEPARTMENTS</sub>			
-		</div>
-	</div>
-
 	<div class="card bg-primary text-white col-sm-2"><!--teachers signin-->
 		<div class="card-body text-center">
 			<?php

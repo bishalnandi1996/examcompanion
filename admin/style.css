@@ -1,5 +1,5 @@
 /* Modal Scroll */
-.modal-body{
+.modal-body {
     max-height: 400px;
 	max-width: 500px;
     overflow-y: auto;

@@ -9,7 +9,7 @@
 				<a class="nav-link" href="index.php?user=<?php echo $_GET['user']; ?>&key=<?php echo $_GET['key']; ?>"><i class="fas fa-home"></i> HOME</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="st_view_result.php?user=<?php echo $_GET['user']; ?>&key=<?php echo $_GET['key']; ?>"><i class="fas fa-clipboard-list"></i> VIEW RESULT</a>
+				<a class="nav-link" href="st_view_result.php?user=<?php echo $_GET['user']; ?>&key=<?php echo $_GET['key']; ?>" target='_blank'><i class="fas fa-clipboard-list"></i> VIEW RESULT</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="st_settings.php?user=<?php echo $_GET['user']; ?>&key=<?php echo $_GET['key']; ?>"><i class="fas fa-cog"></i> SETTINGS</a>

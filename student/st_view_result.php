@@ -12,8 +12,6 @@
 </script>
 
 <?php
-	require 'st_menu.php';
-
 	$student=explode('_',$_GET['user']);
 	$sql="select res_id, qstn_name, res_result, exam_date, attempt_count from student, question, result where student.st_id=result.st_id and question.qstn_id=result.qstn_id and student.st_id=".$student[1]." order by qstn_name";
 	$result=mysqli_query($link,$sql);
@@ -33,7 +31,8 @@
 				echo "<th scope='col'>SCORE</th>";
 				echo "<th scope='col'>EXAM DATE</th>";
 				echo "<th scope='col'>ATTEMPT</th>";
-				echo "<th scope='col'>ANSWER</th>";
+				echo "<th scope='col'>VIEW RESULT</th>";
+				echo "<th scope='col'>DOWNLOAD</th>";
 			echo "</tr>";
 		echo "</thead>";
 
@@ -46,6 +45,7 @@
 					echo "<td>".$row['exam_date']."</td>";
 					echo "<td>".$row['attempt_count']."</td>";
 					echo "<td><button type='button' class='btn btn-primary' onclick='loadDetailResult(".$row['res_id'].")'><i class='fas fa-eye'></i> Show Answer</button></td>";
+					echo "<td><button type='button' class='btn btn-dark' onclick='alert(\"Under Construction\")'><i class='fas fa-file-download'></i> Download</button></td>";
 				echo "</tr>";
 			}
 		echo "</tbody>";

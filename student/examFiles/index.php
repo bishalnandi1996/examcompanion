@@ -27,7 +27,7 @@
 	</style>
 
 </head>
-<body style="overflow-x: hidden; background: #e0e0e0;">
+<body style="overflow-x: hidden;">
 <div class="container">
 
 
@@ -62,42 +62,27 @@
 	foreach($file_content_json as $qstn_set) {
 		$j=0;
 		echo '<div class="form-group" style="font-size: 18px;">
-				<label class="col-form-label" style="background: #bed6d6; padding: 10px; border: 4px solid #889191; border-radius: 10px;"> '.($i+1).'. '.$qstn_set['question'].'</label>
-				<div class="input-group">
-					<div class="input-group-text">
-						<input type="radio" name="examOption['.$i.']['.$j.']" value="'.$qstn_set['a'].'" >
-					</div>
-					'.$qstn_set['a'].'
+				<label class="col-form-label"> '.($i+1).'. '.$qstn_set['question'].'</label>
+				
+				<div>
+					<input type="radio" name="examOption['.$i.']['.$j.']" value="'.$qstn_set['a'].'" > '.$qstn_set['a'].'
+					<input type="radio" name="examOption['.$i.']['.$j.']" value="'.$qstn_set['b'].'" > '.$qstn_set['b'].'
+					<input type="radio" name="examOption['.$i.']['.$j.']" value="'.$qstn_set['c'].'" > '.$qstn_set['c'].'
+					<input type="radio" name="examOption['.$i.']['.$j.']" value="'.$qstn_set['d'].'" > '.$qstn_set['d'].'
 				</div>
-				<div class="input-group">
-					<div class="input-group-text">
-						<input type="radio" name="examOption['.$i.']['.$j.']" value="'.$qstn_set['b'].'" >
-					</div>
-					'.$qstn_set['b'].'
-				</div>
-				<div class="input-group">
-					<div class="input-group-text">
-						<input type="radio" name="examOption['.$i.']['.$j.']" value="'.$qstn_set['c'].'" >
-					</div>
-					'.$qstn_set['c'].'
-				</div>
-				<div class="input-group">
-					<div class="input-group-text">
-						<input type="radio" name="examOption['.$i.']['.$j.']" value="'.$qstn_set['d'].'" >
-					</div>
-					'.$qstn_set['d'].'
-				</div>
+
 				<div>
 					<input type="hidden" name="examOption['.$i.']['.++$j.']" value="'.$qstn_set[$qstn_set['answer']].'" />
 				</div>
-				<button type="button" class="btn btn-danger" onclick="frmQstnReset('.$i.')"><i class="fas fa-redo"></i> RESET ANSWER</button>
-		</div>';
+				
+				<button type="button" class="btn btn-danger btn-sm" onclick="frmQstnReset('.$i.')"><i class="fas fa-redo"></i> RESET ANSWER</button>
+		</div><hr/>';
 		$i++;
 	}
 	echo '</form>';
 
 	echo '<div class="row">
-		<div class="col-sm-12  d-flex justify-content-end"><button type="button" class="btn btn-success" onclick="submitAnswer()"><i class="fas fa-paper-plane"></i> SUBMIT</button></div>
+		<div class="col-sm-12"><button type="button" class="btn btn-success btn-lg btn-block" onclick="submitAnswer()"><i class="fas fa-paper-plane"></i> SUBMIT ANSWER</button></div>
 	</div>';
 	#end of file reading
 ?>
