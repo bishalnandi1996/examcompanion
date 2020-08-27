@@ -11,6 +11,9 @@
 	<script src="../jquery-3.2.1.min.js"></script>
 	<script src="../bootstrap-4/js/bootstrap.min.js"></script>
 
+	<!--Custom JavaScript-->
+	<script src="admin.js"></script>
+
 	<!--Custom CSS-->
 	<link rel="stylesheet" type="text/css" href="style.css" />
 
@@ -22,6 +25,10 @@
 			padding-right: 0;
 		}
 	</style>
+
+	<script>
+		function loadPage
+	</script>
 
 </head>
 <body style="overflow-x: hidden;">

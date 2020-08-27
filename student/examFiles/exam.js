@@ -46,6 +46,6 @@ function frmQstnReset(x) {
 
 $('document').ready(function(){
 	window.onblur = function() {
-		//submitAnswer();
+		submitAnswer();
 	};
 });

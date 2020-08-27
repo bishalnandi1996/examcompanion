@@ -21,17 +21,17 @@
 
 
 	echo "<div class='row' style='background: #212529;'>
-		<div class='col-sm-12 d-flex justify-content-center'><h2 style='font-weight: bold; color: #ffffff; border: 2px solid #ffffff; padding: 5px; margin: 10px;'>".strtoupper($row['qstn_name'])."</h2></div>
-		<div class='col-sm-12' style='color: #ffffff;'>SCORE: ".$row['res_result']."</div>
-		<div class='col-sm-12' style='color: #ffffff;'>ATTEMPT NO: ".$row['attempt_count']."</div>
+		<div class='col-sm-3' style='color: #ffffff;'>SCORE: ".$row['res_result']."</div>
+		<div class='col-sm-5 text-center' style='color: #ffffff;'>QUESTION SET: ".strtoupper($row['qstn_name'])."</div>
+		<div class='col-sm-4 text-right' style='color: #ffffff;'>ATTEMPT NO: ".$row['attempt_count']."</div>
 	</div>";
 	echo "<table class='table table-striped'>";
-	echo "<thead class='thead-dark'>";
-		echo "<tr>";
-			echo "<th scope='col'>SL NO</th>";
-			echo "<th scope='col'>QUESTION</th>";
-			echo "<th scope='col'>CORRECT ANSWER</th>";
-			echo "<th scope='col'>YOUR ANSWER</th>";
+	echo "<thead class='thead-dark'>"; 
+		echo "<tr class='text-center'>";
+			echo "<th style='font-weight: normal; padding: 0px;'>NO</th>";
+			echo "<th style='font-weight: normal; padding: 0px;'>QUESTION</th>";
+			echo "<th style='font-weight: normal; padding: 0px;'>ANSWER</th>";
+			echo "<th style='font-weight: normal; padding: 0px;'>ANSWERED</th>";
 		echo "</tr>";
 	echo "</thead>";
 	echo "<tbody>";

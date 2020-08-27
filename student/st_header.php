@@ -10,6 +10,7 @@
 	<link rel="stylesheet" type="text/css" href="../fontawesome-5/css/all.css" />
 	<script src="../jquery-3.2.1.min.js"></script>
 	<script src="../bootstrap-4/js/bootstrap.min.js"></script>
+	<script src="../jspdf.min.js"></script>
 
 	<style>
 		.container-fluid {

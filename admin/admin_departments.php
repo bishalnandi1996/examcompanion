@@ -46,7 +46,7 @@
         $sql="select * from stream";
         $result=mysqli_query($link,$sql);
         while($row=mysqli_fetch_assoc($result)) {
-            echo "<div onclick='loadSubjModal(".$row['strm_id'].");' style='color: #7e2100; border: 2px solid #7e2100; margin-left: 10px; margin-top: 10px; padding: 5px; background: #dba564; font-weight: bold;'><h1 style='color: #ffffff;'><i class='fas fa-university'></i></h1>".$row['strm_name']."</div>";
+            echo "<div class='divDept' onclick='loadSubjModal(".$row['strm_id'].");'><h1 style='color: #ffffff;'><i class='fas fa-university'></i></h1>".$row['strm_name']."</div>";
         }
     ?>
 </div>

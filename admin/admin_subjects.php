@@ -66,7 +66,7 @@
         $sql="select * from subject";
         $result=mysqli_query($link,$sql);
         while($row=mysqli_fetch_assoc($result)) {
-            echo "<div onclick='loadDeptModal(".$row['subj_id'].");' style='color: #1c5b00; border: 2px solid #1c5b00; margin-left: 10px; margin-top: 10px; padding: 5px; background: #9bf873; font-weight: bold;'><h1 style='color: #ffffff;'><i class='fas fa-book'></i></h1>".$row['subj_name']."</div>";
+            echo "<div class='divSubjects' onclick='loadDeptModal(".$row['subj_id'].");' style=''><h1 style='color: #ffffff;'><i class='fas fa-book'></i></h1>".$row['subj_name']."</div>";
         }
     ?>
 </div>

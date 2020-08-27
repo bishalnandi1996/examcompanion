@@ -4,9 +4,10 @@
 ?>
 
 <script>
+	var js_user = <?php echo json_encode($_GET['user']); ?>;
+	var js_key = <?php echo json_encode($_GET['key']); ?>;
+
 	function loadDetailResult(js_res_id) {
-		var js_user = <?php echo json_encode($_GET['user']); ?>;
-		var js_key = <?php echo json_encode($_GET['key']); ?>;
 		window.open('st_qstn_ans.php?user='+js_user+'&key='+js_key+'&res_id='+js_res_id);
 	}
 </script>
@@ -32,7 +33,7 @@
 				echo "<th scope='col'>EXAM DATE</th>";
 				echo "<th scope='col'>ATTEMPT</th>";
 				echo "<th scope='col'>VIEW RESULT</th>";
-				echo "<th scope='col'>DOWNLOAD</th>";
+				#echo "<th scope='col'>DOWNLOAD</th>";
 			echo "</tr>";
 		echo "</thead>";
 
@@ -45,11 +46,13 @@
 					echo "<td>".$row['exam_date']."</td>";
 					echo "<td>".$row['attempt_count']."</td>";
 					echo "<td><button type='button' class='btn btn-primary' onclick='loadDetailResult(".$row['res_id'].")'><i class='fas fa-eye'></i> Show Answer</button></td>";
-					echo "<td><button type='button' class='btn btn-dark' onclick='alert(\"Under Construction\")'><i class='fas fa-file-download'></i> Download</button></td>";
+					#echo "<td><button type='button' class='btn btn-dark' onclick='downloadDetailResult(".$row['res_id'].")'><i class='fas fa-file-download'></i> Download</button></td>";
 				echo "</tr>";
 			}
 		echo "</tbody>";
 		echo "</table>";
 	}
+
+	echo "<div id='result_download'></div>";
 	require 'st_footer.php';
 ?>

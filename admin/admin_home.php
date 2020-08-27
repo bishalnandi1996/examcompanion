@@ -15,6 +15,8 @@
 </style>
 
 <script>
+var admin_key = <?php echo json_encode($_GET['key']); ?>;
+
 $(document).ready(createDashboard());
 
 function createDashboard(){
@@ -22,7 +24,6 @@ function createDashboard(){
 }
 
 function loadDashboard() {
-	var admin_key = <?php echo json_encode($_GET['key']); ?>;
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
@@ -31,6 +32,10 @@ function loadDashboard() {
 	};
 	xhttp.open("GET", "admin_dashboard.php?user=0&key="+admin_key, true);
 	xhttp.send();
+}
+
+function loadPage() {
+	window.open("admin_view_qstnset.php?user=0&key="+admin_key);
 }
 </script>
 
