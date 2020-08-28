@@ -28,7 +28,7 @@
 
 
 <?php
-    require 'admin_menu.php';
+    #require 'admin_menu.php';
     
     if(isset($_GET['save']) && ($_GET['save']==1)) {
         echo "<script>alert('New Stream Successfully Added');</script>";

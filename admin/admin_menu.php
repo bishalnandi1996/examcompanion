@@ -8,12 +8,12 @@
 			<li class="nav-item">
 				<a class="nav-link" href="admin_home.php?user=<?php echo $_GET['user']; ?>&key=<?php echo $_GET['key']; ?>"><i class="fas fa-chart-bar"></i> DASHBOARD</a>
 			</li>
-			<li class="nav-item">
+			<!-- <li class="nav-item">
 				<a class="nav-link" href="admin_departments.php?user=<?php echo $_GET['user']; ?>&key=<?php echo $_GET['key']; ?>"><i class="fas fa-university"></i> DEPARTMENTS</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="admin_subjects.php?user=<?php echo $_GET['user']; ?>&key=<?php echo $_GET['key']; ?>"><i class="fas fa-book"></i> SUBJECTS</a>
-			</li>
+			</li> -->
 			<li class="nav-item">
 				<a class="nav-link" href="admin_upload_form.php?user=<?php echo $_GET['user']; ?>&key=<?php echo $_GET['key']; ?>"><i class="fas fa-file-upload"></i> UPLOAD DATA</a>
 			</li>

@@ -1,7 +1,6 @@
 <?php
 	require 'admin_authenticate.php';
 	require 'admin_header.php';
-    require 'admin_header.php';
 ?>
 
 
@@ -37,7 +36,7 @@
 
 
 <?php
-    require 'admin_menu.php';
+    #require 'admin_menu.php';
     
     if(isset($_GET['save']) && ($_GET['save']==1)) {
         echo "<script>alert('New Subject Successfully Added');</script>";

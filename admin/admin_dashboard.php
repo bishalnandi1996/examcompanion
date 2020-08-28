@@ -4,7 +4,7 @@
 
 <div class="row">
 
-	<div class="card bg-danger text-white col-sm-2" style='cursor: pointer;' onclick='loadPage()'><!--question set-->
+	<div class="card bg-danger text-white col-sm-2" style='cursor: pointer;' onclick='loadPage("admin_view_qstnset.php")'><!--question set-->
 		<div class="card-body text-center">
 			<?php
 				$sql="select * from teacher";

@@ -28,19 +28,33 @@ function loadDashboard() {
 	xhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
 			document.getElementById("dashboard").innerHTML = this.responseText;
+			document.getElementById("dashboardOptions").hidden = false;
 		}
 	};
 	xhttp.open("GET", "admin_dashboard.php?user=0&key="+admin_key, true);
 	xhttp.send();
 }
 
-function loadPage() {
-	window.open("admin_view_qstnset.php?user=0&key="+admin_key);
+function loadPage(page) {
+	window.open(page + "?user=0&key="+admin_key);
 }
 </script>
 
 <div id="dashboard">
 	<div class="d-flex justify-content-center text-danger" style="font-weight: bold;">Please wait while dashboard is loading....</div>
+</div>
+
+
+<div id='dashboardOptions' hidden>
+	<!-- Departments -->
+	<div class="row">
+		<div class="col-sm-3 divDept" style="margin-left: 30px; margin-top: 20px;" onclick="loadPage('admin_departments.php')"><i class="fas fa-university"></i> Departments</div>
+	</div>
+
+	<!-- Subjects -->
+	<div class="row">
+		<div class="col-sm-3 divSubjects" style="margin-left: 30px; margin-top: 20px;" onclick="loadPage('admin_subjects.php')"><i class="fas fa-book"></i> Subjects</div>
+	</div>
 </div>
 
 <?php
