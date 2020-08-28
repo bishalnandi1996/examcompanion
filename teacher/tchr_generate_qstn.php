@@ -36,7 +36,7 @@
     $result=mysqli_query($link,$sql);
     $row=mysqli_fetch_assoc($result);
 
-    $sql="insert into question(qstn_key,qstn_name,qstn_vector,strm_id,time) values('".$file_key."','".$qstn['qstn_name']."','".$iv."',".$row['strm_id'].",".$qstn['qstn_time'].")";
+    $sql="insert into question(qstn_key,qstn_name,qstn_vector,strm_id,time,tchr_id,qstn_date) values('".$file_key."','".$qstn['qstn_name']."','".$iv."',".$row['strm_id'].",".$qstn['qstn_time'].",".$tchr_id_forqstn[1].",'".date("Y-m-d")."')";
     mysqli_query($link,$sql);
 
     $sql="select * from question where question.qstn_key='".$file_key."' and question.qstn_vector='".$iv."'";

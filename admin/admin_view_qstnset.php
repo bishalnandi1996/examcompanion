@@ -8,14 +8,30 @@
 <?php
 
 function loadQstn($strmID,$link) {
-    $content="";
+    $content="<table class='table table-striped'>";
+    $content.="<thead>
+                <tr>
+                    <th>Sl No.</th>
+                    <th>Question Name</th>
+                    <th>Created By</th>
+                    <th>Date</th>
+                </tr>
+            </thead>";
+    $content.="<tbody>";
     $i=1;
-    $sql_qstn="select * from question where question.strm_id=".$strmID;
+    $sql_qstn="select qstn_name, tchr_name, qstn_key, qstn_vector, time, qstn_date from question, teacher where question.tchr_id=teacher.tchr_id and question.strm_id=".$strmID;
     $result_qstn=mysqli_query($link,$sql_qstn);
     while($row_qstn=mysqli_fetch_assoc($result_qstn)) {
-        $content.="<div class='row' style='font-weight: bold;'>".$i.") ".$row_qstn['qstn_name']."</div>";
+        $content.="<tr>";
+        $content.="<td>".$i."</td>";
+        $content.="<td>".$row_qstn['qstn_name']."</td>";
+        $content.="<td>".$row_qstn['tchr_name']."</td>";
+        $content.="<td>".$row_qstn['qstn_date']."</td>";
+        $content.="</tr>";
         $i++;
     }
+    $content.="</tbody>";
+    $content.="</table>";
     return $content;
 }
 

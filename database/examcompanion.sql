@@ -1,4 +1,3 @@
---
 -- Database: `examcompanion`
 --
 
@@ -32,7 +31,9 @@ CREATE TABLE `question` (
   `qstn_key` varchar(17) NOT NULL,
   `qstn_vector` varchar(17) NOT NULL,
   `strm_id` bigint(20) NOT NULL,
-  `time` int(11) NOT NULL
+  `time` int(11) NOT NULL,
+  `tchr_id` bigint(20) NOT NULL,
+  `qstn_date` date NOT NULL
 );
 
 -- --------------------------------------------------------
@@ -61,7 +62,8 @@ CREATE TABLE `question_subjectwise` (
   `option_c` varchar(100) NOT NULL,
   `option_d` varchar(100) NOT NULL,
   `answer` varchar(2) NOT NULL,
-  `subj_id` bigint(20) NOT NULL
+  `subj_id` bigint(20) NOT NULL,
+  `tchr_id` bigint(20) NOT NULL
 );
 
 -- --------------------------------------------------------
@@ -92,13 +94,6 @@ CREATE TABLE `session` (
   `session_id` varchar(255) NOT NULL
 );
 
---
--- Dumping data for table `session`
---
-
-INSERT INTO `session` (`user_id`, `session_id`) VALUES
-('0', '1bf47695e5bb1ce38e2d19ed9e9e9aac');
-
 -- --------------------------------------------------------
 
 --
@@ -118,7 +113,9 @@ INSERT INTO `stream` (`strm_id`, `strm_name`) VALUES
 (1, 'Master of Computer Application'),
 (2, 'B.Tech Computer Science & Engineering'),
 (3, 'B.Tech Information Technology'),
-(4, 'Bachelor of Computer Application');
+(4, 'Bachelor of Computer Application'),
+(7, 'Master of Business Administration'),
+(8, 'B.Tech Information Technology');
 
 -- --------------------------------------------------------
 
@@ -241,7 +238,8 @@ ALTER TABLE `admin`
 --
 ALTER TABLE `question`
   ADD PRIMARY KEY (`qstn_id`),
-  ADD KEY `strm_id` (`strm_id`);
+  ADD KEY `strm_id` (`strm_id`),
+  ADD KEY `tchr_id` (`tchr_id`);
 
 --
 -- Indexes for table `question_assign`
@@ -255,7 +253,8 @@ ALTER TABLE `question_assign`
 --
 ALTER TABLE `question_subjectwise`
   ADD PRIMARY KEY (`qstn_id`),
-  ADD KEY `subj_id` (`subj_id`);
+  ADD KEY `subj_id` (`subj_id`),
+  ADD KEY `tchr_id` (`tchr_id`);
 
 --
 -- Indexes for table `result`
@@ -313,13 +312,13 @@ ALTER TABLE `teacher`
 -- AUTO_INCREMENT for table `question`
 --
 ALTER TABLE `question`
-  MODIFY `qstn_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `qstn_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `question_assign`
 --
 ALTER TABLE `question_assign`
-  MODIFY `qstn_asgn_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `qstn_asgn_id` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `question_subjectwise`
@@ -331,13 +330,13 @@ ALTER TABLE `question_subjectwise`
 -- AUTO_INCREMENT for table `result`
 --
 ALTER TABLE `result`
-  MODIFY `res_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `res_id` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `stream`
 --
 ALTER TABLE `stream`
-  MODIFY `strm_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `strm_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `stream_subjects`
@@ -349,7 +348,7 @@ ALTER TABLE `stream_subjects`
 -- AUTO_INCREMENT for table `student`
 --
 ALTER TABLE `student`
-  MODIFY `st_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `st_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `subject`
@@ -361,7 +360,7 @@ ALTER TABLE `subject`
 -- AUTO_INCREMENT for table `teacher`
 --
 ALTER TABLE `teacher`
-  MODIFY `tchr_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
+  MODIFY `tchr_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
 
 --
 -- Constraints for dumped tables
@@ -371,7 +370,8 @@ ALTER TABLE `teacher`
 -- Constraints for table `question`
 --
 ALTER TABLE `question`
-  ADD CONSTRAINT `question_ibfk_1` FOREIGN KEY (`strm_id`) REFERENCES `stream` (`strm_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `question_ibfk_1` FOREIGN KEY (`strm_id`) REFERENCES `stream` (`strm_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `question_ibfk_2` FOREIGN KEY (`tchr_id`) REFERENCES `teacher` (`tchr_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `question_assign`
@@ -383,7 +383,8 @@ ALTER TABLE `question_assign`
 -- Constraints for table `question_subjectwise`
 --
 ALTER TABLE `question_subjectwise`
-  ADD CONSTRAINT `question_subjectwise_ibfk_1` FOREIGN KEY (`subj_id`) REFERENCES `subject` (`subj_id`);
+  ADD CONSTRAINT `question_subjectwise_ibfk_1` FOREIGN KEY (`subj_id`) REFERENCES `subject` (`subj_id`),
+  ADD CONSTRAINT `question_subjectwise_ibfk_2` FOREIGN KEY (`tchr_id`) REFERENCES `teacher` (`tchr_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `result`

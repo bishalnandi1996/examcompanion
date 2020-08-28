@@ -14,13 +14,22 @@
 				$result=mysqli_query($link,$sql);
 				while($row=mysqli_fetch_assoc($result)) {
 					echo '<div class="form-check">';
-						echo '<input type="checkbox" class="form-check-input" name="'.$row['subj_name'].'" value="'.$row['subj_id'].'">';
+						echo '<input type="checkbox" class="form-check-input" name="'.$row['subj_name'].'" value="'.$row['subj_id'].'" id="'.$row['subj_id'].'">';
 						echo '<label class="form-check-label" for="'.$row['subj_name'].'">'.$row['subj_name'].'</label>';
 					echo '</div><hr/>';
 				}
 			?>
 		</form>
 	</div><!--end subject selection form-->
+
+<?php
+	#keep the subject selection checked
+	if(!empty($_POST)) {
+		foreach($_POST as $key => $val) {
+			echo "<script>document.getElementById('".$val."').checked = true</script>";
+		}
+	}
+?>
 
 	<div class="col-sm-1 d-flex justify-content-end align-self-center" style="margin-right: 20px; margin-top: 20px;">
 		<button type="button" class="btn btn-primary" onclick="document.getElementById('frmChooseSubject').submit();">Next <i class="fas fa-arrow-circle-right"></i></button>
