@@ -44,6 +44,7 @@ function loadPage(page) {
 	<div class="d-flex justify-content-center text-danger" style="font-weight: bold;">Please wait while dashboard is loading....</div>
 </div>
 
+<hr/>
 
 <div id='dashboardOptions' hidden>
 	<!-- Departments -->
