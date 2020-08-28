@@ -6,11 +6,13 @@
 	}
 ?>
 
-<fieldset>
+
 <div class="d-sm-flex justify-content-center" style="margin-top: 20px;"><!--flex to center align the form-->
 	<div class="card col-sm-4" style="padding: 0;"><!--bootstrap4 card-->
-
-		<div class="card-heading bg-dark text-white text-center col-sm-12" style="padding: 5px; font-weight: bold;">ADMIN LOGIN</div>
+		
+		<fieldset>
+			<div class="card-heading bg-dark text-white text-center col-sm-12" style="padding: 5px; font-weight: bold;">ADMIN LOGIN</div>
+		</fieldset>
 
 		<div class="card-body">
 			<form action="admin_signin.php" method="post">
@@ -36,7 +38,6 @@
 
 	</div><!--end of bootstrap4 card-->
 </div><!--end of flex to center align form-->
-</fieldset>
 
 
 <?php

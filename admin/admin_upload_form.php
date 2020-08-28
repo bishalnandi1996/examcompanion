@@ -25,7 +25,7 @@
 
 	<div class="col-sm-6"><!--File uploading form-->
 		
-		<fieldset><div class="row"><!--Teacher Data Upload-->
+		<div class="row"><!--Teacher Data Upload-->
 
 		<?php
 			if(isset($_GET['type']) && strcmp($_GET['type'],'tchr')==0) {
@@ -35,7 +35,9 @@
 
 			<div class="d-sm-flex justify-content-center" style="margin-top: 20px;"><!--flex to center align the form-->
 				<div class="card col-sm-12" style="padding: 0;"><!--bootstrap4 card-->
-					<div class="card-heading bg-info text-white text-center col-sm-12" style="padding: 5px; font-weight: bold;"><i class="fas fa-chalkboard-teacher"></i> UPLOAD TEACHER DATA</div>
+					<fieldset>
+						<div class="card-heading bg-info text-white text-center col-sm-12" style="padding: 5px; font-weight: bold;"><i class="fas fa-chalkboard-teacher"></i> UPLOAD TEACHER DATA</div>
+					</fieldset>
 					<div class="card-body">
 						<form enctype="multipart/form-data" action="admin_upload_process.php?user=<?php echo $_GET['user']; ?>&key=<?php echo $_GET['key']; ?>&type=tchr" method="post">
 							<div class="form-group">
@@ -59,7 +61,7 @@
 		</div></fieldset><!--end of teacher form-->
 	
 		
-		<fieldset><div class="row"><!--Student Data Upload-->
+		<div class="row"><!--Student Data Upload-->
 
 		<?php
 			if(isset($_GET['type']) && strcmp($_GET['type'],'std')==0) {
@@ -69,7 +71,9 @@
 
 			<div class="d-sm-flex justify-content-center" style="margin-top: 20px;"><!--flex to center align the form-->
 				<div class="card col-sm-12" style="padding: 0;"><!--bootstrap4 card-->
-					<div class="card-heading bg-info text-white text-center col-sm-12" style="padding: 5px; font-weight: bold;"><i class="fas fa-user-graduate"></i> UPLOAD STUDENT DATA</div>
+					<fieldset>
+						<div class="card-heading bg-info text-white text-center col-sm-12" style="padding: 5px; font-weight: bold;"><i class="fas fa-user-graduate"></i> UPLOAD STUDENT DATA</div>
+					</fieldset>
 					<div class="card-body">
 						<form enctype="multipart/form-data" action="admin_upload_process.php?user=<?php echo $_GET['user']; ?>&key=<?php echo $_GET['key']; ?>&type=std" method="post">
 							<div class="form-group">
