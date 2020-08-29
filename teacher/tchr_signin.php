@@ -24,8 +24,8 @@
 				die('Error Occured');
 		}
 		else
-			header('Location: ../index.php?t_login=0#teacherlogin');
+			header('Location: ../tchr_login_form.php?t_login=0#teacherlogin');
 	}
 	else
-		header('Location: ../index.php?t_user=0#teacherlogin');
+		header('Location: ../tchr_login_form.php?t_user=0#teacherlogin');
 ?>

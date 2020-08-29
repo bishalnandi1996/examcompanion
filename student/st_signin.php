@@ -24,8 +24,8 @@
 				die('Error Occured');
 		}
 		else
-			header('Location: ../index.php?s_login=0#studentlogin');
+			header('Location: ../std_login_form.php?s_login=0#studentlogin');
 	}
 	else
-		header('Location: ../index.php?s_user=0#studentlogin');
+		header('Location: ../std_login_form.php?s_user=0#studentlogin');
 ?>
