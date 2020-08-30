@@ -12,7 +12,7 @@
 
 
 	<div class="col-sm-5" style="background: #dedede; border: 3px solid #00003b; color: #00006f; margin: 20px; font-weight: bold;"><!--start of file format instruction-->
-		<div class="row d-flex justify-content-center">
+		<div class="row d-flex justify-content-center text-center">
 			<h3 style="text-decoration: underline;">INSTRUCTIONS FOR FILE UPLOAD</h3>
 		</div>
 		<div class="row">
