@@ -9,7 +9,7 @@ MCQ based digital examination system
 - MySQL 5+
 - MySQL gui client for easy access eg: phpmyadmin
 - Any text editor for customization
-- Firefox 69+
+- Browser (Firefox, Chrome, Edge etc.)
 
 
 #### Database Setup
@@ -22,10 +22,16 @@ Upload all the files and directories in the document root of your server using a
 #### Connecting the Application to database
 Once uploading is done open the *linkDB.php* file. Specify the values for corresponding variables. Save and update it in the docuemnt root of the server.
 
+#### Setup in Linux Shared Hosting using cPanel
+- Login to the cPanel and click on the PHP PEAR Packages.
+- Type zip in the search bar and Archive_Zip will be available. Click on the install icon.
+- After installing Archive_Zip go back to cPanel and click the Select PHP Version.
+- Now, the Zip or Archive_Zip is visible here. Click the checkbox of the zip extension and hit the save button to add the Zip or Archive_Zip to the current PHP version. This would install the PHP Zip extension.
+- Login to the cPanel through SSH and run the command: $composer require phpoffice/phpspreadsheet
+
 #### Access the Application
 For the first time access the application url eg:
 - localhost (end user access)
-- localhost/admin (admin access)
 - username `bishalnandi1996@gmail.com`
 - password `bishal`
 

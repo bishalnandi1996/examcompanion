@@ -7,7 +7,7 @@
 	<div class="card bg-danger text-white col-sm-2" style='cursor: pointer;' onclick='loadPage("admin_view_qstnset.php")'><!--question set-->
 		<div class="card-body text-center">
 			<?php
-				$sql="select * from teacher";
+				$sql="select * from question";
 				$result=mysqli_query($link,$sql);
 				$num=mysqli_num_rows($result);
 				echo "<h1><i class='fas fa-clipboard-list'></i> ".$num."</h1>";
