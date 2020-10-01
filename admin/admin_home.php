@@ -6,8 +6,10 @@
 
 <style>
 	.card {
-		margin-left: 30px;
+		margin-left: 20px;
 		margin-top: 10px;
+		max-width: 100%;
+		overflow: auto;
 	}
 	sub {
 		font-weight: bold;
@@ -49,12 +51,12 @@ function loadPage(page) {
 <div id='dashboardOptions' hidden>
 	<!-- Departments -->
 	<div class="row">
-		<div class="col-sm-3 divDept" style="margin-left: 30px; margin-top: 20px;" onclick="loadPage('admin_departments.php')"><i class="fas fa-university"></i> Departments</div>
+		<div class="col-sm-3 divDept" onclick="loadPage('admin_departments.php')"><i class="fas fa-university"></i> Departments</div>
 	</div>
 
 	<!-- Subjects -->
 	<div class="row">
-		<div class="col-sm-3 divSubjects" style="margin-left: 30px; margin-top: 20px;" onclick="loadPage('admin_subjects.php')"><i class="fas fa-book"></i> Subjects</div>
+		<div class="col-sm-3 divSubjects" onclick="loadPage('admin_subjects.php')"><i class="fas fa-book"></i> Subjects</div>
 	</div>
 </div>
 

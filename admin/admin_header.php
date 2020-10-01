@@ -12,7 +12,7 @@
 	<script src="../bootstrap-4/js/bootstrap.min.js"></script>
 
 	<!--Custom JavaScript-->
-	<script src="admin.js"></script>
+	<!--script src="admin.js"></script-->
 
 	<!--Custom CSS-->
 	<link rel="stylesheet" type="text/css" href="style.css" />
@@ -27,7 +27,7 @@
 	</style>
 
 	<script>
-		function loadPage
+		function loadPage;
 	</script>
 
 </head>
