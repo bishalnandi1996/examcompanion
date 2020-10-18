@@ -6,12 +6,11 @@
 <script>
 	function srcStdName() {
 		var stdName = document.getElementById("srcStdName").value;
-		var stdQstn = document.getElementById("srcStdQuestion").value;
-		var stdRoll = "";
+		var stdRoll = document.getElementById("srcStdRoll").value;
 		var stdExam = document.getElementById("srcStdExamDate").value;
 		var stdPassout = document.getElementById("srcStdPassout").value;
 
-		if(stdName == "" && stdQstn == "" && stdExam == "" && stdPassout == "")
+		if(stdName == "" && stdRoll == "" && stdExam == "" && stdPassout == "")
 			alert('Please enter atleast one data');
 		else {
 			var t_user = <?php echo json_encode($_GET['user']); ?>;
@@ -23,17 +22,8 @@
 					document.getElementById("srcResult").innerHTML = this.responseText;
 				}
 			};
-
-			if(stdQstn == "") {
-				xhttp.open("GET", "tchr_do_search.php?user="+t_user+"&key="+t_key+"&n="+stdName+"&r="+stdRoll+"&e="+stdExam+"&p="+stdPassout, true);
-				xhttp.send();
-			}
-			else {
-				xhttp.open("GET", "tchr_do_search_qstn_set.php?user="+t_user+"&key="+t_key+"&q="+stdQstn+"&e="+stdExam, true);
-				xhttp.send();
-			}
-
-			
+			xhttp.open("GET", "tchr_do_search.php?user="+t_user+"&key="+t_key+"&n="+stdName+"&r="+stdRoll+"&e="+stdExam+"&p="+stdPassout, true);
+			xhttp.send();
 		}
 	}
 
@@ -71,12 +61,12 @@
 				<input type="text" id="srcStdName" placeholder="student name" />
 			</div>
 		</div>
-		<div class="col-sm-2"><!--question set name-->
+		<div class="col-sm-2"><!--roll number-->
 			<div class="row d-flex justify-content-center">
-				Question Set Name
+				Roll Number
 			</div>
 			<div class="row d-flex justify-content-center">
-				<input type="text" id="srcStdQuestion" placeholder="question set name" />
+				<input type="text" id="srcStdRoll" placeholder="roll number" />
 			</div>
 		</div>
 		<div class="col-sm-2"><!--exam date-->

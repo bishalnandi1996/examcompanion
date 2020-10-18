@@ -15,11 +15,14 @@
 				<a class="nav-link" href="tchr_create_qstn_set.php?user=<?php echo $_GET['user']; ?>&key=<?php echo $_GET['key']; ?>"><i class="fas fa-clipboard-list"></i> CREATE QUESTION SET</a>
 			</li>
 			<li class="nav-item">
+				<a class="nav-link" href="tchr_search.php?user=<?php echo $_GET['user']; ?>&key=<?php echo $_GET['key']; ?>"><i class="fas fa-search"></i> SEARCH</a>
+			</li>
+			<!-- <li class="nav-item">
 				<a class="nav-link" href="tchr_search.php?user=<?php echo $_GET['user']; ?>&key=<?php echo $_GET['key']; ?>"><i class="fas fa-search"></i> SEARCH STUDENT</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="tchr_search_qstn_set.php?user=<?php echo $_GET['user']; ?>&key=<?php echo $_GET['key']; ?>"><i class="fab fa-searchengin"></i> SEARCH QUESTION SET</a>
-			</li>
+			</li> -->
 			<li class="nav-item">
 				<a class="nav-link" href="tchr_settings.php?user=<?php echo $_GET['user']; ?>&key=<?php echo $_GET['key']; ?>"><i class="fas fa-cog"></i> SETTINGS</a>
 			</li>
