@@ -4,7 +4,7 @@
 ?>
 <script>
 	function startTest(x) {
-		window.open('examFiles/index.php?user='+<?php echo json_encode($_GET['user']) ?>+'&key='+<?php echo json_encode($_GET['key']) ?>+'&qstn='+x,'_blank');			
+		window.open('examFiles/index.php?user='+<?php echo json_encode($_GET['user']) ?>+'&key='+<?php echo json_encode($_GET['key']) ?>+'&qstn='+x,'_self');			
 	}
 </script>
 <?php
@@ -43,7 +43,12 @@
 				while ($row=mysqli_fetch_assoc($result)) {
 					echo "<div class='row' style='margin: 5px;'>";
 					echo "<div class='col-sm-9' style='background: #8362be; padding-top: 5px; color: #ffffff; font-size: 20px;'><i class='fas fa-clipboard-list'></i> ".$row['qstn_name']."</div>";
-					echo "<div class='col-sm-3' style='padding: 2px;'><button type='button' style='border-radius: 0px;' class='btn btn-success' onclick='startTest(".$row['qstn_id'].")' ><i class='fas fa-play-circle'></i> Start Test</button></div>";
+					$sql_attempt="select * from result where result.qstn_id=".$row['qstn_id']." and result.st_id=".$st_year[1];
+					$result_attempt=mysqli_query($link,$sql_attempt);
+					$attempt_flag=mysqli_num_rows($result_attempt);
+					if($attempt_flag==0) {
+						echo "<div class='col-sm-3' style='padding: 2px;'><button type='button' style='border-radius: 0px;' class='btn btn-success' onclick='startTest(".$row['qstn_id'].")' ><i class='fas fa-play-circle'></i> Start Test</button></div>";
+					}
 					echo "</div>";
 				}
 			}

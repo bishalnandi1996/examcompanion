@@ -77,7 +77,6 @@ CREATE TABLE `result` (
   `st_id` bigint(20) NOT NULL,
   `qstn_id` bigint(20) NOT NULL,
   `res_result` float NOT NULL,
-  `attempt_count` int(11) NOT NULL,
   `exam_date` date NOT NULL,
   `res_key` varchar(17) NOT NULL,
   `res_iv` varchar(17) NOT NULL

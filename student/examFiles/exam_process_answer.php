@@ -29,13 +29,6 @@
 
 	$student=explode('_',$_GET['user']);
 
-	#checking for previous attempts
-	$sql="select result.attempt_count as attempt from result where result.st_id=".$student[1]." and result.qstn_id=".$_GET['qstn'];
-	$result=mysqli_query($link,$sql);
-	#count previous number of attempt
-	$count=mysqli_num_rows($result);
-	$count++;
-
 	$ansJson=json_encode($ansJson);
 	$file_key=substr(hash("md5",rand(),FALSE),0,16); # key for encryption and decryption
 	$iv=substr(hash("md5",rand(),FALSE),0,16); # $iv=initial vector
@@ -43,11 +36,11 @@
 
 
 	#inserting result to database
-	$sql="insert into result(st_id,qstn_id,res_result,attempt_count,exam_date,res_key,res_iv) values(".$student[1].",".$_GET['qstn'].",".$score.",".$count.",'".date('Y-m-d')."','".$file_key."','".$iv."')";
+	$sql="insert into result(st_id,qstn_id,res_result,exam_date,res_key,res_iv) values(".$student[1].",".$_GET['qstn'].",".$score.",'".date('Y-m-d')."','".$file_key."','".$iv."')";
 	mysqli_query($link,$sql);
 
 	#fetching data for filename
-	$sql="select result.res_id as res_id from result where result.st_id=".$student[1]." and result.qstn_id=".$_GET['qstn']." and result.attempt_count=".$count;
+	$sql="select result.res_id as res_id from result where result.st_id=".$student[1]." and result.qstn_id=".$_GET['qstn'];
 	$result=mysqli_query($link,$sql);
 	$row=mysqli_fetch_assoc($result);
 
@@ -58,6 +51,7 @@
 	fclose($file_handle);
 
 	echo "You have scored: ".$score."%";
-	echo "<br/><button type='button' onclick='window.close();'>Click Here to Continue</button>"
+	$homepage='../index.php?user='.$_GET['user'].'&key='.$_GET['key'];
+	echo "<br/><button type='button' onclick=\"window.open('".$homepage."','_self');\">Click Here to Continue</button>";
 
 ?>

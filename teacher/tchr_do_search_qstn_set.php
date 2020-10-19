@@ -9,7 +9,7 @@
 	############ end ##############
 
 
-	$sql="select student.st_name as st_name, st_passout_year, result.res_result as res_result, result.res_id as res_id, attempt_count, exam_date from student, question, result where question.strm_id=".$row['strm_id']." and student.st_id=result.st_id and question.qstn_id=result.qstn_id and question.qstn_name like '%".$_GET['q']."%'";
+	$sql="select student.st_name as st_name, st_passout_year, result.res_result as res_result, result.res_id as res_id, exam_date from student, question, result where question.strm_id=".$row['strm_id']." and student.st_id=result.st_id and question.qstn_id=result.qstn_id and question.qstn_name like '%".$_GET['q']."%'";
 	if(isset($_GET['e']) && $_GET['e']!='') {
 		$sql.=" and result.exam_date='".$_GET['e']."'";
 	}
@@ -27,7 +27,7 @@
 				echo "<th scope='col'>SL NO</th>";
 				echo "<th scope='col'>STUDENT NAME</th>";
 				echo "<th scope='col'>SCORE</th>";
-				echo "<th scope='col'>ATTEMPT</th>";
+				#echo "<th scope='col'>ATTEMPT</th>";
 				echo "<th scope='col'>EXAM DATE</th>";
 				echo "<th scope='col'>PASSOUT YEAR</th>";
 				echo "<th scope='col'>OPTION</th>";
